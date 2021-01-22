@@ -17,7 +17,7 @@ spec:
         name: pipelinerun-$(params.uuid)
       spec:
         pipelineRef:
-          name: hello-pipeline
+          name: deployment-pipeline
         params:
           - name: ibmcloudapikey
             value: $(params.ibmcloudapikey)

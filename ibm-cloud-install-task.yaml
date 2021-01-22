@@ -20,6 +20,7 @@ spec:
         wget $(params.file) -O nodeapp.zip
         unzip ./nodeapp.zip -d ./application
         rm nodeapp.zip
+        echo $(params.uuid)
         
         ibmcloud login -a cloud.ibm.com -r eu-gb -g Default -s dev -apikey $(params.ibmcloudapikey)
         ibmcloud cf install

@@ -8,6 +8,8 @@ spec:
       type: string
     - name: file
       type: string
+    - name: uuid
+      type: string
   steps:
     - name: login-and-deploy-function
       image: ibmcom/ibm-cloud-developer-tools-amd64:1.2.3

@@ -8,6 +8,8 @@ spec:
       description: The IBM Cloud API Key
     - name: file
       description: The repository contents to download
+    - name: uuid
+      description: A unique identifier
   tasks:
     - name: pipeline-ibm-cloud-install-task
       taskRef:
@@ -17,3 +19,5 @@ spec:
           value: $(params.ibmcloudapikey)
         - name: file
           value: $(params.file)
+        - name: uuid
+          value: $(params.uuid)

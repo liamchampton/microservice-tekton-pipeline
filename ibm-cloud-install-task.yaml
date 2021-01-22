@@ -22,7 +22,6 @@ spec:
         rm nodeapp.zip
         echo $(params.uuid)
         cd application/microservice-node-demo-main
-        ls -la
         
         ibmcloud login -a cloud.ibm.com -r eu-gb -g Default -apikey $(params.ibmcloudapikey)
         ibmcloud cf install

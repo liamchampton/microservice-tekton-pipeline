@@ -1,0 +1,25 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Task
+metadata:
+  name: ibm-cloud-install-task
+spec:
+  params:
+    - name: ibmcloudapikey
+      type: string
+    - name: file
+      type: string
+  steps:
+    - name: login-and-deploy-function
+      image: ibmcom/ibm-cloud-developer-tools-amd64:1.2.3
+      script: |
+        #!/usr/bin/env sh
+        apk add zip
+        mkdir -p ./application
+        wget $(params.file) -O nodeapp.zip
+        unzip ./nodeapp.zip -d ./application
+        rm nodeapp.zip
+        
+        ibmcloud login -a cloud.ibm.com -r eu-gb -g Default -s dev -apikey $(params.ibmcloudapikey)
+        ibmcloud cf install
+        ibmcloud target --cf
+        ibmcoud cf push liams-node-app -m 128M

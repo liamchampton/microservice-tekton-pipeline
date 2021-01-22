@@ -21,8 +21,9 @@ spec:
         unzip ./nodeapp.zip -d ./application
         rm nodeapp.zip
         echo $(params.uuid)
+        cd application
         
-        ibmcloud login -a cloud.ibm.com -r eu-gb -g Default -s dev -apikey $(params.ibmcloudapikey)
+        ibmcloud login -a cloud.ibm.com -r eu-gb -g Default -apikey $(params.ibmcloudapikey)
         ibmcloud cf install
         ibmcloud target --cf
         ibmcloud cf push liams-node-app -m 128M

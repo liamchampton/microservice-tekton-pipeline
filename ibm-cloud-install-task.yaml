@@ -22,4 +22,4 @@ spec:
         ibmcloud login -a cloud.ibm.com -r eu-gb -g Default -s dev -apikey $(params.ibmcloudapikey)
         ibmcloud cf install
         ibmcloud target --cf
-        ibmcoud cf push liams-node-app -m 128M
+        ibmcloud cf push liams-node-app -m 128M

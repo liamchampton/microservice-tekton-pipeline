@@ -27,7 +27,7 @@ spec:
       taskRef:
         name: aws-cloud-install-task
       params:
-      - name: file2
+        - name: file2
           value: $(params.file2)
-      - name: uuid
+        - name: uuid
           value: $(params.uuid)

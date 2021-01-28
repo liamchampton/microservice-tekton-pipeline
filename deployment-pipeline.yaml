@@ -23,9 +23,9 @@ spec:
           value: $(params.file)
         - name: uuid
           value: $(params.uuid)
-    - name: pipeline-aws-cloud-install-task
+    - name: pipeline-do-cloud-install-task
       taskRef:
-        name: aws-cloud-install-task
+        name: do-cloud-install-task
       params:
         - name: file2
           value: $(params.file2)

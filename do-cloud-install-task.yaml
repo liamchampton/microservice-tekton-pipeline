@@ -15,8 +15,8 @@ spec:
         #!/usr/bin/env sh 
         apk add wget
         wget https://github.com/digitalocean/doctl/releases/download/v1.54.0/doctl-1.54.0-linux-amd64.tar.gz
-        tar xf ~/doctl-1.54.0-linux-amd64.tar.gz
-        sudo mv ~/doctl /usr/local/bin
+        tar xf app/doctl-1.54.0-linux-amd64.tar.gz
+        sudo mv app/doctl /usr/local/bin
 
         # yum install zip -y
         # yum install unzip -y

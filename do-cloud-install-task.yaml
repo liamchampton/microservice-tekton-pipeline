@@ -10,10 +10,14 @@ spec:
         type: string
   steps:
     - name: login-and-deploy-function
-      image: digitalocean/doctl:1.55.0
+      image: alpine:3.13.0
       script: |
         #!/usr/bin/env sh 
-       
+        apk add wget
+        wget https://github.com/digitalocean/doctl/releases/download/v1.54.0/doctl-1.54.0-linux-amd64.tar.gz
+        tar xf ~/doctl-1.54.0-linux-amd64.tar.gz
+        sudo mv ~/doctl /usr/local/bin
+
         # yum install zip -y
         # yum install unzip -y
         # yum install wget -y
@@ -26,5 +30,5 @@ spec:
         # cd application/microservice-go-demo-main
         # ls -la
         pwd
-        digitalocean/doctl -h
+        doctl -h
         

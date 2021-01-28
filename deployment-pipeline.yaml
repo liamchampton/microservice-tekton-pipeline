@@ -7,7 +7,9 @@ spec:
     - name: ibmcloudapikey
       description: The IBM Cloud API Key
     - name: file
-      description: The repository contents to download
+      description: The node app repository contents to download
+    - name: file2
+      description: The node app repository contents to download
     - name: uuid
       description: A unique identifier
   tasks:
@@ -19,5 +21,7 @@ spec:
           value: $(params.ibmcloudapikey)
         - name: file
           value: $(params.file)
+        - name: file2
+          value: $(params.file2)
         - name: uuid
           value: $(params.uuid)

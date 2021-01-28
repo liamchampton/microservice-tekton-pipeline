@@ -8,5 +8,7 @@ spec:
       value: $(event.ibmcloudapikey)
     - name: file
       value: $(event.file)
+    - name: file2
+      value: $(event.file2)
     - name: uuid
       value: $(event.uuid)

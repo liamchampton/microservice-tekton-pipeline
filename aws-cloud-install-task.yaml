@@ -1,0 +1,32 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: aws-cloud-install-task
+spec:
+  params:
+      - name: awsakid
+        type: string
+      - name: awssak
+        type: string
+      - name: file2
+        type: string
+      - name: uuid
+        type: string
+  steps:
+    - name: login-and-deploy-function
+      image: amazon/aws-cli:2.1.21
+      script: |
+        #!/usr/bin/env sh        
+        apt install zip
+        mkdir -p ./application
+        wget $(params.file2) -O goapp.zip
+        unzip ./goapp.zip -d ./application
+        rm goapp.zip
+        echo $(params.uuid)
+        cd application/microservice-go-demo-main
+        ls -la
+        pwd
+
+        aws -h
+
+        

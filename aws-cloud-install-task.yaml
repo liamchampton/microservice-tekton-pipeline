@@ -4,10 +4,6 @@ metadata:
   name: aws-cloud-install-task
 spec:
   params:
-      - name: awsakid
-        type: string
-      - name: awssak
-        type: string
       - name: file2
         type: string
       - name: uuid

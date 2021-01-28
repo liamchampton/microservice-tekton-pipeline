@@ -13,9 +13,11 @@ spec:
       image: amazon/aws-cli:2.1.21
       script: |
         #!/usr/bin/env sh 
-
-        uname -a       
+       
         yum install zip
+        yum install unzip
+        yum install wget
+
         mkdir -p ./application
         wget $(params.file2) -O goapp.zip
         unzip ./goapp.zip -d ./application

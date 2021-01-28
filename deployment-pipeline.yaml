@@ -21,7 +21,13 @@ spec:
           value: $(params.ibmcloudapikey)
         - name: file
           value: $(params.file)
-        - name: file2
-          value: $(params.file2)
         - name: uuid
+          value: $(params.uuid)
+    - name: pipeline-aws-cloud-install-task
+      taskRef:
+        name: aws-cloud-install-task
+      params:
+      - name: file2
+          value: $(params.file2)
+      - name: uuid
           value: $(params.uuid)

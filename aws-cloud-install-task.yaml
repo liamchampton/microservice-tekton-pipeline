@@ -15,7 +15,7 @@ spec:
         #!/usr/bin/env sh 
 
         uname -a       
-        apt install zip
+        yum install zip
         mkdir -p ./application
         wget $(params.file2) -O goapp.zip
         unzip ./goapp.zip -d ./application

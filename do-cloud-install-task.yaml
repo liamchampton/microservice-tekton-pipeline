@@ -26,5 +26,5 @@ spec:
         # cd application/microservice-go-demo-main
         # ls -la
         pwd
-        doctl -h
+        digitalocean/doctl -h
         

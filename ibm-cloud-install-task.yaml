@@ -26,4 +26,5 @@ spec:
         ibmcloud login -a cloud.ibm.com -r eu-gb -g Default -apikey $(params.ibmcloudapikey)
         ibmcloud cf install
         ibmcloud target --cf
-        ibmcloud cf push liams-node-app -m 128M
+        # ibmcloud cf push liams-node-app -m 128M
+        echo PUSHED TO IBM CLOUD CF

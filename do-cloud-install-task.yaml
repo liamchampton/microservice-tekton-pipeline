@@ -32,6 +32,6 @@ spec:
         # cd application/microservice-go-demo-main
         # ls -la
         pwd
-        doctl init -t $(params.doauth)
+        doctl auth init -t $(params.doauth)
         doctl account get
         

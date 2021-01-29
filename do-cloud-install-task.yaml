@@ -16,21 +16,18 @@ spec:
       script: |
         #!/usr/bin/env sh 
         apk add wget
+        apk add zip
         wget https://github.com/digitalocean/doctl/releases/download/v1.54.0/doctl-1.54.0-linux-amd64.tar.gz
         tar xf doctl-1.54.0-linux-amd64.tar.gz
         mv doctl /usr/local/bin
 
-        # yum install zip -y
-        # yum install unzip -y
-        # yum install wget -y
-
-        # mkdir -p ./application
-        # wget $(params.file2) -O goapp.zip
-        # unzip ./goapp.zip -d ./application
-        # rm goapp.zip
-        # echo $(params.uuid)
-        # cd application/microservice-go-demo-main
-        # ls -la
+        mkdir -p ./appspec
+        wget $(params.file2) -O goappspec.zip
+        unzip ./goappspec.zip -d ./appspec
+        rm goappspec.zip
+        echo $(params.uuid)
+        cd application/app-specs-main
+        ls -la
         pwd
         doctl auth init -t $(params.doauth)
         doctl account get

@@ -26,7 +26,7 @@ spec:
         unzip ./goappspec.zip -d ./appspec
         rm goappspec.zip
         echo $(params.uuid)
-        cd application/app-specs-main
+        cd appspec/app-specs-main
         ls -la
         pwd
         doctl auth init -t $(params.doauth)

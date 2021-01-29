@@ -31,4 +31,5 @@ spec:
         pwd
         doctl auth init -t $(params.doauth)
         doctl account get
+        doctl apps create --spec client-go-app.yaml
         

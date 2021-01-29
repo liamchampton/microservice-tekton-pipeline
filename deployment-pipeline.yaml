@@ -26,6 +26,7 @@ spec:
         - name: uuid
           value: $(params.uuid)
     - name: pipeline-do-cloud-install-task
+      runAfter: pipeline-ibm-cloud-install-task
       taskRef:
         name: do-cloud-install-task
       params:

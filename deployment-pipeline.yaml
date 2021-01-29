@@ -6,6 +6,8 @@ spec:
   params:
     - name: ibmcloudapikey
       description: The IBM Cloud API Key
+    - name: doauth
+      description: The Digital Ocean API Key
     - name: file
       description: The node app repository contents to download
     - name: file2
@@ -27,6 +29,8 @@ spec:
       taskRef:
         name: do-cloud-install-task
       params:
+        - name: doauth
+          value: $(params.doauth)
         - name: file2
           value: $(params.file2)
         - name: uuid

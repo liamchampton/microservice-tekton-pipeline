@@ -6,6 +6,8 @@ spec:
   params:
     - name: ibmcloudapikey
       description: The IBM Cloud API Key
+    - name: doauth
+      description: The Digital Ocean API Key
     - name: file
       description: The node app repository to be downloaded
     - name: file2
@@ -23,6 +25,8 @@ spec:
         params:
           - name: ibmcloudapikey
             value: $(params.ibmcloudapikey)
+          - name: doauth
+            value: $(params.doauth)
           - name: file
             value: $(params.file)
           - name: file2

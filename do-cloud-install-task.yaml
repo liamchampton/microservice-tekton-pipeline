@@ -4,6 +4,8 @@ metadata:
   name: do-cloud-install-task
 spec:
   params:
+      - name: doauth
+        type: string
       - name: file2
         type: string
       - name: uuid
@@ -30,5 +32,6 @@ spec:
         # cd application/microservice-go-demo-main
         # ls -la
         pwd
-        doctl -h
+        doctl init -t $(params.doauth)
+        doctl account get
         

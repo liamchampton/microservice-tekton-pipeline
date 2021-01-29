@@ -6,6 +6,8 @@ spec:
   params:
     - name: ibmcloudapikey
       value: $(event.ibmcloudapikey)
+    - name: doauth
+      value: $(event.doauth)
     - name: file
       value: $(event.file)
     - name: file2

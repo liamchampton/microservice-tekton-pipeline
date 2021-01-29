@@ -6,32 +6,22 @@ spec:
   params:
       - name: doauth
         type: string
-      - name: file2
-        type: string
       - name: uuid
         type: string
   steps:
     - name: login-and-deploy-function
       image: alpine:3.13.0
       script: |
-        #!/usr/bin/env sh 
+        #!/usr/bin/env sh
+        echo pipeline-uuid-$(params.uuid)
         apk add wget
-        # apk add zip
         wget https://github.com/digitalocean/doctl/releases/download/v1.54.0/doctl-1.54.0-linux-amd64.tar.gz
         tar xf doctl-1.54.0-linux-amd64.tar.gz
         mv doctl /usr/local/bin
-
         mkdir -p ./appspec
-        # wget $(params.file2) -O goappspec.zip
-        # unzip ./goappspec.zip -d ./appspec
-        # rm goappspec.zip
-        echo $(params.uuid)
-        # cd appspec/app-specs-main
-
         cd appspec/
         touch client-go-app.yaml
         ls -la
-
         cat >> client-go-app.yaml <<EOF
         name: client-go-app
         services:
@@ -46,9 +36,8 @@ spec:
                 value: https://liams-node-app.eu-gb.mybluemix.net
             instance_count: 1
         EOF
-
         pwd
         doctl auth init -t $(params.doauth)
-        doctl account get
         doctl apps create --spec client-go-app.yaml
+        echo App deployed to Digital Ocean
         

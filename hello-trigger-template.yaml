@@ -10,8 +10,6 @@ spec:
       description: The Digital Ocean API Key
     - name: file
       description: The node app repository to be downloaded
-    - name: file2
-      description: The node app repository to be downloaded
     - name: uuid
       description: A unique identifier
   resourcetemplates:
@@ -29,7 +27,5 @@ spec:
             value: $(params.doauth)
           - name: file
             value: $(params.file)
-          - name: file2
-            value: $(params.file2)
           - name: uuid
             value: $(params.uuid)

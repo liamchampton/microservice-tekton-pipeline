@@ -10,7 +10,5 @@ spec:
       value: $(event.doauth)
     - name: file
       value: $(event.file)
-    - name: file2
-      value: $(event.file2)
     - name: uuid
       value: $(event.uuid)
